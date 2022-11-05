@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
+import { TableViewComponent } from './table-view/table-view.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, MainComponent, HeaderComponent, FooterComponent, TableViewComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent, MainComponent, HeaderComponent, FooterComponent],
