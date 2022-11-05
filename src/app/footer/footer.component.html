@@ -1,7 +1,7 @@
 <div>Footer</div>
 
 <ul>
-  <li *ngFor="let number of numbers">
-    <span *ngIf="number % 2 === 0">{{ number }}</span>
-  </li>
+  <ng-container *ngFor="let number of numbers">
+    <li *ngIf="number % 2 === 0">{{ number }}</li>
+  </ng-container>
 </ul>
