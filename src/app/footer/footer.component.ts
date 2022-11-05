@@ -10,8 +10,12 @@ export class FooterComponent {
   numbers: number[];
   colors: string[];
 
+  stringInput: string;
+
   constructor() {
     this.numbers = [1, 2, 3, 4, 5];
     this.colors = ['red', 'green', 'blue'];
+
+    this.stringInput = '';
   }
 }
