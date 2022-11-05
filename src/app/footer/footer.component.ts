@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   //Example
   numbers: number[];
+  colors: string[];
 
   constructor() {
     this.numbers = [1, 2, 3, 4, 5];
+    this.colors = ['red', 'green', 'blue'];
   }
 }

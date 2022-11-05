@@ -2,6 +2,12 @@
 
 <ul>
   <ng-container *ngFor="let number of numbers">
-    <li *ngIf="number % 2 === 0">{{ number }}</li>
+    <li *ngIf="number % 2 === 0" style="color: blueviolet">{{ number }}</li>
   </ng-container>
 </ul>
+
+<ol>
+  <li *ngFor="let color of colors">
+    <span [ngStyle]="{ color: color }">{{ color }}</span>
+  </li>
+</ol>
