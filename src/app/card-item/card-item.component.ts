@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { Post } from '../post.interface';
 
 @Component({
@@ -6,14 +14,21 @@ import { Post } from '../post.interface';
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss'],
 })
-export class CardItemComponent {
+export class CardItemComponent implements OnInit, OnChanges {
   @Input() post!: Post;
 
   @Output() postSelected = new EventEmitter<Post>();
   constructor() {}
 
   likeCurrentPost(): void {
-    // console.log('likedPost');
     this.postSelected.emit(this.post);
+  }
+
+  ngOnInit(): void {
+    console.log('ngOnInit');
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges');
   }
 }

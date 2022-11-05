@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Post } from '../post.interface';
 
 @Component({
@@ -6,11 +6,15 @@ import { Post } from '../post.interface';
   templateUrl: './card-list-view.component.html',
   styleUrls: ['./card-list-view.component.scss'],
 })
-export class CardListViewComponent {
+export class CardListViewComponent implements OnInit {
   posts: Post[];
   selectedPost!: Post;
 
   constructor() {
+    this.posts = [];
+  }
+
+  ngOnInit(): void {
     this.posts = [
       {
         id: 0,
@@ -38,6 +42,7 @@ export class CardListViewComponent {
       },
     ];
   }
+
   likeCurrentPost(post: Post): void {
     this.selectedPost = post;
   }
