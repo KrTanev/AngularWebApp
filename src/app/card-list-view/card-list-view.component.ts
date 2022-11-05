@@ -8,6 +8,7 @@ import { Post } from '../post.interface';
 })
 export class CardListViewComponent {
   posts: Post[];
+  selectedPost!: Post;
 
   constructor() {
     this.posts = [
@@ -36,5 +37,8 @@ export class CardListViewComponent {
         publishDate: '01.01.1970',
       },
     ];
+  }
+  likeCurrentPost(post: Post): void {
+    this.selectedPost = post;
   }
 }

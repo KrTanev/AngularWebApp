@@ -1,7 +1,12 @@
 <h1 class="text-center text-success mb-4">Read more about it</h1>
 
+<p *ngIf="selectedPost">Your liked article is: {{ selectedPost.title }}</p>
+
 <div class="row">
   <div class="col-md-4" *ngFor="let post of posts">
-    <app-card-item [post]="post"></app-card-item>
+    <app-card-item
+      [post]="post"
+      (postSelected)="likeCurrentPost($event)"
+    ></app-card-item>
   </div>
 </div>

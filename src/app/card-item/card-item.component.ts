@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post } from '../post.interface';
 
 @Component({
@@ -8,9 +8,12 @@ import { Post } from '../post.interface';
 })
 export class CardItemComponent {
   @Input() post!: Post;
+
+  @Output() postSelected = new EventEmitter<Post>();
   constructor() {}
 
   likeCurrentPost(): void {
-    console.log('likedPost');
+    // console.log('likedPost');
+    this.postSelected.emit(this.post);
   }
 }
