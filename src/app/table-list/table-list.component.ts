@@ -1,6 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../post.interface';
+import { PostsService } from '../postService';
 
 @Component({
   selector: 'app-table-list',
@@ -10,32 +11,17 @@ import { Post } from '../post.interface';
 export class TableListComponent implements OnInit {
   posts?: Post[];
 
-  constructor() {}
+  constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.posts = [
-      {
-        id: 0,
-        title: 'Title One',
-        content: 'Lorem',
-        author: 'Angular',
-        publishDate: '01.01.1970',
+    this.postsService.getPosts().subscribe(
+      (response) => {
+        this.posts = response;
       },
-      {
-        id: 1,
-        title: 'Title two',
-        content: 'Lorem',
-        author: 'Angular',
-        publishDate: '01.01.1970',
-      },
-      {
-        id: 2,
-        title: 'Title three',
-        content: 'Lorem',
-        author: 'Angular',
-        publishDate: '01.01.1970',
-      },
-    ];
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   onPostSubmitted(post: Post): void {
