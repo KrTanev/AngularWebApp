@@ -12,6 +12,7 @@ import { CardItemComponent } from './card-item/card-item.component';
 import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
+import { CardListComponent } from './card-list/card-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-
     PostTdFormComponent,
     TableListComponent,
     PostReactiveFormComponent,
+    CardListComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
