@@ -1,0 +1,30 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      name="title"
+      id="title"
+      placeholder="Enter title..."
+      aria-describedby="titleHelp"
+      [(ngModel)]="post.title"
+      required
+      ngModel
+    />
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <input
+      type="text"
+      class="form-control"
+      name="content"
+      id="content"
+      placeholder="Enter content..."
+      [(ngModel)]="post.content"
+      required
+      ngModel
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

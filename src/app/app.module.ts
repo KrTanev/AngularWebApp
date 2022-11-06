@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { CardListViewComponent } from './card-list-view/card-list-view.component';
 import { TableViewComponent } from './table-view/table-view.component';
 import { CardItemComponent } from './card-item/card-item.component';
+import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,10 @@ import { CardItemComponent } from './card-item/card-item.component';
     TableViewComponent,
     CardListViewComponent,
     CardItemComponent,
+    PostTdFormComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent, MainComponent, HeaderComponent /*FooterComponent*/],
+  bootstrap: [AppComponent /*FooterComponent*/],
 })
 export class AppModule {}
