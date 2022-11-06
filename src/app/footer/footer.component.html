@@ -1,1 +1,31 @@
 <div>Footer</div>
+
+// For and style assign
+<ul>
+  <ng-container *ngFor="let number of numbers">
+    <li *ngIf="number % 2 === 0" style="color: blueviolet">{{ number }}</li>
+  </ng-container>
+</ul>
+
+//Dynamically style assign
+<ol>
+  <li *ngFor="let color of colors">
+    <span [ngStyle]="{ color: color }">{{ color }}</span>
+  </li>
+</ol>
+
+//Style assign by class in scss file
+<ol>
+  <li *ngFor="let color of colors">
+    <span class="active">{{ color }}</span>
+  </li>
+</ol>
+
+<h2 class="text-primary">Two-way binding</h2>
+//Dynamically input
+
+<div>
+  <input type="text" [(ngModel)]="stringInput" />
+</div>
+
+<div>Result after change : {{ stringInput || "empty" }}</div>

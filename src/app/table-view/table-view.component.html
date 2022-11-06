@@ -1,0 +1,21 @@
+<h1 class="text-primary">Welcome</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publish</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.author }}</td>
+      <td>{{ post.publishDate }}</td>
+    </tr>
+  </tbody>
+</table>
