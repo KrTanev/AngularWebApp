@@ -4,7 +4,6 @@
       "cmd": "Start with json-server --watch srcapiapi.json"
     }
   ],
-
   "posts": [
     {
       "id": 0,
@@ -33,9 +32,22 @@
       "content": "Lorem",
       "author": "Angular",
       "publishDate": "01.01.1970"
+    },
+    {
+      "title": "Title five",
+      "content": "None content provided",
+      "author": "Angular",
+      "publishDate": "06/11/2022",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "title": "Title six",
+      "content": "Loremmmmmm",
+      "author": "Angular",
+      "publishDate": "06/11/2022"
     }
   ],
-
   "cards": [
     {
       "id": 0,

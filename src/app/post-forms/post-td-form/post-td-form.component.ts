@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  Input,
   OnInit,
   Output,
   ViewChild,
@@ -15,18 +16,12 @@ import { Post } from 'src/app/post.interface';
 })
 export class PostTdFormComponent implements OnInit {
   @ViewChild('form', { static: true }) ngForm?: NgForm;
-  post: Post;
+
+  @Input() post: Post;
 
   @Output() postSubmitted = new EventEmitter<Post>();
 
-  constructor() {
-    this.post = {
-      title: '',
-      content: '',
-      author: '',
-      publishDate: '',
-    };
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 
