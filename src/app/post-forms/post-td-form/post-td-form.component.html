@@ -9,9 +9,31 @@
       placeholder="Enter title..."
       aria-describedby="titleHelp"
       [(ngModel)]="post.title"
+      #titleControl="ngModel"
+      minlength="5"
       required
-      ngModel
     />
+
+    <small
+      *ngIf="
+        titleControl.touched &&
+        titleControl.invalid &&
+        titleControl.hasError('required')
+      "
+      class="text-danger"
+    >
+      This field is required
+    </small>
+
+    <small
+      *ngIf="
+        titleControl.touched &&
+        titleControl.invalid &&
+        titleControl.hasError('minlength')
+      "
+      class="text-danger"
+      >You have to enter at least 5 simbols</small
+    >
   </div>
   <div class="mb-3">
     <label for="content" class="form-label">Content</label>
@@ -22,9 +44,37 @@
       id="content"
       placeholder="Enter content..."
       [(ngModel)]="post.content"
+      #contentControl="ngModel"
+      minlength="10"
       required
-      ngModel
     />
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <small
+    *ngIf="
+      contentControl.touched &&
+      contentControl.invalid &&
+      contentControl.hasError('required')
+    "
+    class="text-danger"
+  >
+    This field is required
+  </small>
+  <small
+    *ngIf="
+      contentControl.touched &&
+      contentControl.invalid &&
+      contentControl.hasError('minlength')
+    "
+    class="text-danger"
+    >You have to enter at least 10 simbols</small
+  >
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [attr.disabled]="!form.valid ? true : null"
+  >
+    Submit
+  </button>
 </form>

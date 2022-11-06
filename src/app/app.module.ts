@@ -10,6 +10,7 @@ import { CardListViewComponent } from './card-list-view/card-list-view.component
 import { TableViewComponent } from './table-view/table-view.component';
 import { CardItemComponent } from './card-item/card-item.component';
 import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
+import { TableListComponent } from './table-list/table-list.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.comp
     CardListViewComponent,
     CardItemComponent,
     PostTdFormComponent,
+    TableListComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
