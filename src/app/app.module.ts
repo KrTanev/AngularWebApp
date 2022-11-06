@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,10 @@ import { MainComponent } from './main/main.component';
 import { CardListViewComponent } from './card-list-view/card-list-view.component';
 import { TableViewComponent } from './table-view/table-view.component';
 import { CardItemComponent } from './card-item/card-item.component';
+import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
+import { CardListComponent } from './card-list/card-list.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +23,13 @@ import { CardItemComponent } from './card-item/card-item.component';
     TableViewComponent,
     CardListViewComponent,
     CardItemComponent,
+    PostTdFormComponent,
+    TableListComponent,
+    PostReactiveFormComponent,
+    CardListComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent, MainComponent, HeaderComponent /*FooterComponent*/],
+  bootstrap: [AppComponent /*FooterComponent*/],
 })
 export class AppModule {}
