@@ -6,8 +6,26 @@
       {{ post.content }}
     </p>
 
-    <button class="btn btn-outline-primary" (click)="likeCurrentPost()">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="likeCurrentPost()"
+    >
       Like this post
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      (click)="editCurrentPost()"
+    >
+      Edit post
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-danger"
+      (click)="postDelete.emit(post.id)"
+    >
+      Delete post
     </button>
   </div>
 </div>
