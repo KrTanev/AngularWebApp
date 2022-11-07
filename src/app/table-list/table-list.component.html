@@ -1,3 +1,10 @@
-<app-post-td-form (postSubmitted)="onPostSubmitted($event)"></app-post-td-form>
+<app-post-td-form
+  [post]="selectedPost"
+  (postSubmitted)="onPostSubmitted($event)"
+></app-post-td-form>
 
-<app-table-view [posts]="posts"></app-table-view>
+<app-table-view
+  [posts]="posts"
+  (postSelected)="onPostSelect($event)"
+  (postDeleted)="onPostDelete($event)"
+></app-table-view>

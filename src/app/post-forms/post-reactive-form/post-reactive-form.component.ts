@@ -1,5 +1,12 @@
 import { formatDate } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Post } from 'src/app/post.interface';
 
@@ -8,7 +15,8 @@ import { Post } from 'src/app/post.interface';
   templateUrl: './post-reactive-form.component.html',
   styleUrls: ['./post-reactive-form.component.scss'],
 })
-export class PostReactiveFormComponent implements OnInit {
+export class PostReactiveFormComponent implements OnInit, OnChanges {
+  @Input() post: Post;
   @Output() postSubmitted = new EventEmitter<Post>();
 
   // @ts-ignore
@@ -18,9 +26,18 @@ export class PostReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.formBuild.group({
-      title: ['', [Validators.required, Validators.minLength(5)]],
-      content: [''],
+      id: this.post.id,
+      title: [this.post.title, [Validators.required, Validators.minLength(5)]],
+      content: [this.post.content],
     });
+  }
+
+  ngOnChanges(): void {
+    if (this.formGroup) {
+      this.formGroup.get('id')?.setValue(this.post.id);
+      this.formGroup.get('title')?.setValue(this.post.title);
+      this.formGroup.get('content')?.setValue(this.post.content);
+    }
   }
 
   onSubmit(): void {

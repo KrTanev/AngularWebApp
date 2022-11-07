@@ -1,4 +1,9 @@
 <app-post-reactive-form
+  [post]="selectedPost"
   (postSubmitted)="onPostSubmit($event)"
 ></app-post-reactive-form>
-<app-card-list-view [posts]="posts"></app-card-list-view>
+<app-card-list-view
+  [posts]="posts"
+  (postSelected)="onPostSelect($event)"
+  (postDeleted)="onPostDelete($event)"
+></app-card-list-view>

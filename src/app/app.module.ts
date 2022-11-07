@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,8 +12,8 @@ import { TableViewComponent } from './table-view/table-view.component';
 import { CardItemComponent } from './card-item/card-item.component';
 import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
 import { TableListComponent } from './table-list/table-list.component';
-import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
 import { CardListComponent } from './card-list/card-list.component';
+import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { CardListComponent } from './card-list/card-list.component';
     PostReactiveFormComponent,
     CardListComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent /*FooterComponent*/],
 })

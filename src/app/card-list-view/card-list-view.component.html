@@ -7,6 +7,8 @@
     <app-card-item
       [post]="post"
       (postSelected)="likeCurrentPost($event)"
+      (postEdit)="onPostEdit($event)"
+      (postDelete)="postDeleted.emit($event)"
     ></app-card-item>
   </div>
 </div>

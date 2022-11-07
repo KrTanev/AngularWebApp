@@ -3,10 +3,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Publish</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
 
@@ -16,6 +17,22 @@
       <td>{{ post.title }}</td>
       <td>{{ post.author }}</td>
       <td>{{ post.publishDate }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-link"
+          (click)="onEditClick(post.id)"
+        >
+          Edit
+        </button>
+        <button
+          type="button"
+          class="btn btn-link"
+          (click)="onDeleteClick(post.id)"
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
