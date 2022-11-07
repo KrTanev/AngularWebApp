@@ -1,6 +1,6 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Post } from '../post.interface';
+import { Post } from '../../post.interface';
 
 @Component({
   selector: 'app-table-view',

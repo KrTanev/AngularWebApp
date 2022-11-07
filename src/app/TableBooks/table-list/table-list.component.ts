@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { Post } from '../post.interface';
-import { PostsService } from '../postService';
+import { Post } from '../../post.interface';
+import { PostsService } from '../../postService';
 
 @Component({
   selector: 'app-table-list',

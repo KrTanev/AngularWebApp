@@ -10,7 +10,7 @@
 //Dynamically style assign
 <ol>
   <li *ngFor="let color of colors">
-    <span [ngStyle]="{ color: color }">{{ color }}</span>
+    <!-- <span [ngStyle]="{ color: color }">{{ color }}</span> -->
   </li>
 </ol>
 
@@ -25,7 +25,7 @@
 //Dynamically input
 
 <div>
-  <input type="text" [(ngModel)]="stringInput" />
+  <!-- <input type="text" [(ngModel)]="stringInput" /> -->
 </div>
 
 <div>Result after change : {{ stringInput || "empty" }}</div>

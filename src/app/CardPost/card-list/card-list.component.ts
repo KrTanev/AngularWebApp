@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { CardsService } from '../cardsService';
-import { Post } from '../post.interface';
+import { CardsService } from '../../cardsService';
+import { Post } from '../../post.interface';
 
 @Component({
   selector: 'app-card-list',

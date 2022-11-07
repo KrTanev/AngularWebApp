@@ -7,7 +7,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { Post } from '../post.interface';
+import { Post } from '../../post.interface';
 
 @Component({
   selector: 'app-card-item',

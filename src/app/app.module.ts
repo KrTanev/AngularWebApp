@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 // import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
-import { CardListViewComponent } from './card-list-view/card-list-view.component';
-import { TableViewComponent } from './table-view/table-view.component';
-import { CardItemComponent } from './card-item/card-item.component';
+import { CardListViewComponent } from './CardPost/card-list-view/card-list-view.component';
+import { TableViewComponent } from './TableBooks/table-view/table-view.component';
+import { CardItemComponent } from './CardPost/card-item/card-item.component';
 import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { CardListComponent } from './card-list/card-list.component';
+import { TableListComponent } from './TableBooks/table-list/table-list.component';
+import { CardListComponent } from './CardPost/card-list/card-list.component';
 import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
 import { Route, RouterModule } from '@angular/router';
 
@@ -32,6 +32,14 @@ const routes: Route[] = [
   {
     path: 'Posts',
     component: CardListComponent,
+  },
+  {
+    path: 'Posts/create',
+    component: PostReactiveFormComponent,
+  },
+  {
+    path: 'Posts/edit/:id',
+    component: PostReactiveFormComponent,
   },
 ];
 @NgModule({
