@@ -1,6 +1,5 @@
-import { formatDate } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { pipe, Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { Post } from '../post.interface';
 import { PostsService } from '../postService';
 
@@ -28,34 +27,6 @@ export class TableListComponent implements OnInit, OnDestroy {
     this.getData();
   }
 
-  onPostSubmitted(post: Post): void {
-    //Create
-    if (!post.id) {
-      const newPost = {
-        ...post,
-        id: this.posts?.length,
-        author: 'Angular',
-        publishDate: formatDate(new Date(), 'dd/MM/yyyy', 'en'),
-      };
-
-      this.postsService
-        .createPosts(newPost)
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(() => this.getData());
-      return;
-    } else {
-      //Update
-      this.postsService
-        .updatePosts(post)
-        .pipe(takeUntil(this.destroy$))
-        .subscribe(() => this.getData());
-    }
-  }
-
-  onPostSelect(post: Post): void {
-    this.selectedPost = post;
-  }
-
   onPostDelete(postId: number): void {
     this.postsService
       .deletePosts(postId)
@@ -76,7 +47,7 @@ export class TableListComponent implements OnInit, OnDestroy {
         (response) => {
           this.posts = response;
         },
-        (error) => {
+        (error: any) => {
           console.log(error);
         }
       );

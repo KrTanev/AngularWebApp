@@ -11,6 +11,12 @@ export class PostsService {
 
   constructor(private http: HttpClient) {}
 
+  getPost(id: number): Observable<Post> {
+    const url = `${this.url}/${id}`;
+
+    return this.http.get<Post>(url);
+  }
+
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.url);
   }
