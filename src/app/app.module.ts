@@ -14,7 +14,26 @@ import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.comp
 import { TableListComponent } from './table-list/table-list.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
+import { Route, RouterModule } from '@angular/router';
 
+const routes: Route[] = [
+  {
+    path: 'Books',
+    component: TableListComponent,
+  },
+  {
+    path: 'Books/add',
+    component: PostTdFormComponent,
+  },
+  {
+    path: 'Books/edit/:id',
+    component: PostTdFormComponent,
+  },
+  {
+    path: 'Posts',
+    component: CardListComponent,
+  },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +48,13 @@ import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-
     PostReactiveFormComponent,
     CardListComponent,
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+  ],
   providers: [],
   bootstrap: [AppComponent /*FooterComponent*/],
 })
