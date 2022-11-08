@@ -4,6 +4,161 @@
       "cmd": "Start with json-server --watch srcapiapi.json"
     }
   ],
+  "users": [
+    {
+      "id": "1",
+      "username": "Admin",
+      "email": "admin@abv.bg",
+      "password": "password"
+    },
+    {
+      "username": "TheKuci",
+      "email": "krastio_bg@mail.bg",
+      "password": "fi.HJYeLUKg@8R",
+      "confirmPassword": "fi.HJYeLUKg@8R",
+      "id": "vZs8AZt"
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "GiLK-5m"
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "Od8wIqZ"
+    },
+    {
+      "username": "ddsds",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "438uScp"
+    },
+    {
+      "username": "dsadas",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "1nlyLsd"
+    },
+    {
+      "username": "",
+      "email": "dsadsa",
+      "password": "",
+      "confirmPassword": "",
+      "id": "Gxz-ku9"
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "rVhj9mV"
+    },
+    {
+      "username": "dsadas",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "zykoEAa"
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "qwe",
+      "confirmPassword": "qwe",
+      "id": "ex4fdLy"
+    },
+    {
+      "username": "admin",
+      "email": "admin@abv.bg",
+      "password": "qwe",
+      "confirmPassword": "qwe",
+      "id": "PFY9a_b"
+    },
+    {
+      "username": "Admin",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "n0xs3Ro"
+    },
+    {
+      "username": "Admin",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "b5MlUG5"
+    },
+    {
+      "username": "A",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "EopAURI"
+    },
+    {
+      "username": "dsadsa",
+      "email": "admin@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": "KXNHl7T"
+    },
+    {
+      "username": "as",
+      "email": "admin@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": "TQyYGve"
+    },
+    {
+      "username": "dsad",
+      "email": "admin@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": "S5c7Sa3"
+    },
+    {
+      "username": "",
+      "email": "admin@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": "-A9UcHF"
+    },
+    {
+      "username": "",
+      "email": "asdsa",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": "EGycjAu"
+    },
+    {
+      "username": "dsadas",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "YYmhMxZ"
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": "ZqxJRST"
+    },
+    {
+      "username": "asdsa",
+      "email": "admin@abv.bg",
+      "password": "asd",
+      "confirmPassword": "asd",
+      "id": "O-L5HE2"
+    }
+  ],
   "posts": [
     {
       "id": 0,

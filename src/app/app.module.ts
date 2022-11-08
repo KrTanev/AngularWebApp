@@ -15,8 +15,18 @@ import { TableListComponent } from './TableBooks/table-list/table-list.component
 import { CardListComponent } from './CardPost/card-list/card-list.component';
 import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
 import { Route, RouterModule } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Route[] = [
+  {
+    path: 'Register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'Login',
+    component: LoginComponent,
+  },
   {
     path: 'Books',
     component: TableListComponent,
@@ -55,6 +65,8 @@ const routes: Route[] = [
     TableListComponent,
     PostReactiveFormComponent,
     CardListComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +76,6 @@ const routes: Route[] = [
     RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent /*FooterComponent*/],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
