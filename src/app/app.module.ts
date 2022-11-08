@@ -16,8 +16,13 @@ import { CardListComponent } from './CardPost/card-list/card-list.component';
 import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
 import { Route, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Route[] = [
+  {
+    path: 'Register',
+    component: RegisterComponent,
+  },
   {
     path: 'Login',
     component: LoginComponent,
@@ -61,6 +66,7 @@ const routes: Route[] = [
     PostReactiveFormComponent,
     CardListComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
