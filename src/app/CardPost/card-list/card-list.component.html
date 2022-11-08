@@ -1,7 +1,6 @@
-<app-post-reactive-form
-  [post]="selectedPost"
-  (postSubmitted)="onPostSubmit($event)"
-></app-post-reactive-form>
+<div class="mb-b">
+  <a routerLink="/Posts/create"> Create new post</a>
+</div>
 <app-card-list-view
   [posts]="posts"
   (postSelected)="onPostSelect($event)"

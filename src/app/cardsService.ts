@@ -6,10 +6,16 @@ import { Post } from './post.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class CardsService {
+export class CardService {
   url = 'http://localhost:3000/cards';
 
   constructor(private http: HttpClient) {}
+
+  getPost(id: number): Observable<Post> {
+    const url = `${this.url}/${id}`;
+
+    return this.http.get<Post>(url);
+  }
 
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.url);

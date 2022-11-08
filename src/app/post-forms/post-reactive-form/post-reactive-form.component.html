@@ -1,3 +1,6 @@
+<h3>
+  {{ post.id ? "Edit post" : "Create post" }}
+</h3>
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
@@ -47,7 +50,11 @@
       class="btn btn-outline-dark"
       [disabled]="formGroup.invalid"
     >
-      Submit
+      {{ post.id ? "Edit" : "Create" }}
     </button>
+
+    <a class="btn btn-outline-default" routerLink="/Posts">
+      {{ post.id ? "Cancel" : "Back" }}
+    </a>
   </div>
 </form>
