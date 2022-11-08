@@ -4,6 +4,15 @@
       "cmd": "Start with json-server --watch srcapiapi.json"
     }
   ],
+
+  "users": [
+    {
+      "id": "1",
+      "username": "Admin",
+      "email": "admin@abv.bg",
+      "password": "password"
+    }
+  ],
   "posts": [
     {
       "id": 0,
