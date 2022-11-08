@@ -13,13 +13,12 @@
     >
       Like this post
     </button>
-    <button
-      type="button"
+
+    <a
       class="btn btn-outline-success"
-      (click)="editCurrentPost()"
+      [routerLink]="['/Posts', 'edit', post.id]"
+      >Edit</a
     >
-      Edit post
-    </button>
     <button
       type="button"
       class="btn btn-outline-danger"

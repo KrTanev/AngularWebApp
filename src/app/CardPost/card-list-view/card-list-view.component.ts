@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Post } from '../post.interface';
+import { Post } from '../../post.interface';
 
 @Component({
   selector: 'app-card-list-view',
