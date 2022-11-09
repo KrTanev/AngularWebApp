@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
 import { CardService } from 'src/app/cardsService';
 import { Card } from 'src/app/card.interface';
+import { User } from 'src/app/auth/user.model';
 
 @Component({
   selector: 'app-post-reactive-form',
@@ -24,6 +25,7 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
   // @ts-ignore
   formGroup: FormGroup;
   card: Card;
+  user: User;
 
   destroy$ = new Subject<boolean>();
 
@@ -63,24 +65,27 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   onSubmit(): void {
+    this.loggedUser();
+
     const card: Card = {
       ...this.formGroup.value,
-      author: 'Angular',
+      author: this.user.username,
       publishDate: formatDate(new Date(), 'dd/MM/yyyy', 'en'),
+      likes: 0,
     };
 
     if (!card.id) {
       this.cardService
         .createCards({ ...card })
         .pipe(take(1))
-        .subscribe(() => this.router.navigate(['/cards']));
+        .subscribe(() => this.router.navigate(['/Posts']));
 
       return;
     } else {
       this.cardService
         .updateCards(card)
         .pipe(takeUntil(this.destroy$))
-        .subscribe(() => this.router.navigate(['/cards']));
+        .subscribe(() => this.router.navigate(['/Posts']));
     }
 
     this.cardSubmitted.emit(card);
@@ -107,5 +112,13 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
       title: [this.card.title, [Validators.required, Validators.minLength(5)]],
       content: [this.card.content],
     });
+  }
+
+  loggedUser(): void {
+    try {
+      this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
+    } catch {
+      console.log('err');
+    }
   }
 }

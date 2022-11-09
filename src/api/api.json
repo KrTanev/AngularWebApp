@@ -9,14 +9,16 @@
       "id": "1",
       "username": "Admin",
       "email": "admin@abv.bg",
-      "password": "password"
+      "password": "password",
+      "isOrganization": "true"
     },
     {
       "username": "TheKuci",
       "email": "krastio_bg@mail.bg",
       "password": "fi.HJYeLUKg@8R",
       "confirmPassword": "fi.HJYeLUKg@8R",
-      "id": "vZs8AZt"
+      "id": "vZs8AZt",
+      "isOrganization": "true"
     }
   ],
   "posts": [
@@ -122,10 +124,11 @@
     },
     {
       "id": 6,
-      "title": "213213213213dddddddddddd",
-      "content": "32323232",
-      "author": "Angular",
-      "publishDate": "08/11/2022"
+      "title": "11111111111111111111111",
+      "content": "22222222222222222222222",
+      "author": "Admin",
+      "publishDate": "09/11/2022",
+      "likes": 0
     }
   ]
 }

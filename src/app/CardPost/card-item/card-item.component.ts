@@ -7,6 +7,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
+import { User } from 'src/app/auth/user.model';
 import { Card } from 'src/app/card.interface';
 
 @Component({
@@ -16,6 +17,7 @@ import { Card } from 'src/app/card.interface';
 })
 export class CardItemComponent implements OnInit, OnChanges {
   @Input() card!: Card;
+  @Input() user?: User;
 
   @Output() cardSelected = new EventEmitter<Card>();
   @Output() cardEdit = new EventEmitter<Card>();
@@ -31,10 +33,20 @@ export class CardItemComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.loggedUser();
+
     // console.log('ngOnInit');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log('ngOnChanges');
+  }
+
+  loggedUser(): void {
+    try {
+      this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
+    } catch {
+      console.log('err');
+    }
   }
 }

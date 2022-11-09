@@ -1,7 +1,10 @@
 <div class="card" style="width: 18rem">
   <div class="card-body">
     <h5 class="card-title">{{ card.title }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ card.publishDate }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Author: {{ card.author }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Publish date: {{ card.publishDate }}
+    </h6>
     <p class="card-text">
       {{ card.content }}
     </p>
@@ -11,20 +14,21 @@
       class="btn btn-outline-primary"
       (click)="likeCurrentCard()"
     >
-      Like this post
+      Like
     </button>
-
-    <a
-      class="btn btn-outline-success"
-      [routerLink]="['/Posts', 'edit', card.id]"
-      >Edit</a
-    >
-    <button
-      type="button"
-      class="btn btn-outline-danger"
-      (click)="cardDelete.emit(card.id)"
-    >
-      Delete post
-    </button>
+    <ng-container *ngIf="user?.isOrganization">
+      <a
+        class="btn btn-outline-success"
+        [routerLink]="['/Posts', 'edit', card.id]"
+        >Edit
+      </a>
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        (click)="cardDelete.emit(card.id)"
+      >
+        Delete post
+      </button>
+    </ng-container>
   </div>
 </div>
