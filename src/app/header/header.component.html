@@ -16,16 +16,18 @@
       </ul>
 
       <form class="d-flex">
-        <li class="nav-item" *ngIf="!hasLoggedIn">
+        <li class="nav-item" *ngIf="!hasLoggedIn; else loggedOut">
           <a class="nav-link btn btn-outline-success" routerLink="Login"
             >Login</a
           >
         </li>
-        <li class="nav-item" *ngIf="hasLoggedIn">
-          <a class="nav-link btn btn-outline-success" (click)="onLogOut()"
-            >Logout</a
-          >
-        </li>
+        <ng-template #loggedOut>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-success" (click)="onLogOut()"
+              >Logout</a
+            >
+          </li>
+        </ng-template>
       </form>
     </div>
   </div>

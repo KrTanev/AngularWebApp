@@ -11,7 +11,6 @@ export class NonAuthGuard implements CanActivate {
   canActivate(): boolean {
     try {
       const user = this.authSerivece.getLoggedUser() || null;
-      console.log(user);
 
       if (user) {
         this.router.navigate(['Posts']);
