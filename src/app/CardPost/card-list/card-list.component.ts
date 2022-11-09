@@ -59,7 +59,7 @@ export class CardListComponent implements OnInit, OnDestroy {
     try {
       this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
     } catch {
-      console.log('err');
+      console.log('JSON parse Err');
     }
   }
 }

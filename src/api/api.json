@@ -110,10 +110,11 @@
       "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
       "author": "Generator",
       "publishDate": "01.01.1970",
-      "likes": 24,
+      "likes": 25,
       "likedBy": [
         "Admin",
-        "proba"
+        "proba",
+        "user"
       ]
     },
     {
@@ -122,10 +123,11 @@
       "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
       "author": "Angular",
       "publishDate": "08/11/2022",
-      "likes": 9,
+      "likes": 10,
       "likedBy": [
         "Admin",
-        "proba"
+        "proba",
+        "user"
       ]
     },
     {
@@ -134,10 +136,11 @@
       "content": "Lorem is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here,",
       "author": "Generator",
       "publishDate": "01.01.1970",
-      "likes": 3,
+      "likes": 4,
       "likedBy": [
         "Admin",
-        "proba"
+        "proba",
+        "user"
       ]
     },
     {
@@ -146,9 +149,10 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
       "author": "used since the 1500s",
       "publishDate": "01.01.1970",
-      "likes": 1,
+      "likes": 2,
       "likedBy": [
-        "Admin"
+        "Admin",
+        "user"
       ]
     },
     {
@@ -168,10 +172,11 @@
       "content": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue;.",
       "author": "H. Rackham",
       "publishDate": "01.01.1970",
-      "likes": 2,
+      "likes": 3,
       "likedBy": [
         "Admin",
-        "proba"
+        "proba",
+        "user"
       ]
     },
     {

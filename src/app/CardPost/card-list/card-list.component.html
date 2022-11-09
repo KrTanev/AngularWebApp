@@ -4,10 +4,10 @@
       Create new post</a
     >
   </div>
-  <app-card-list-view
-    [user]="user"
-    [cards]="cards"
-    (cardSelected)="onCardSelect($event)"
-    (cardDeleted)="onCardDelete($event)"
-  ></app-card-list-view>
 </ng-container>
+<app-card-list-view
+  [user]="user"
+  [cards]="cards"
+  (cardSelected)="onCardSelect($event)"
+  (cardDeleted)="onCardDelete($event)"
+></app-card-list-view>
