@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
           return;
         }
 
+        this.authService.setLoggedUser(response);
         this.router.navigate(['Posts']);
       });
   }
