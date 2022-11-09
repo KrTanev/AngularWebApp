@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
+import { Card } from 'src/app/card.interface';
 import { CardService } from '../../cardsService';
-import { Post } from '../../post.interface';
 
 @Component({
   selector: 'app-card-list',
@@ -9,17 +9,18 @@ import { Post } from '../../post.interface';
   styleUrls: ['./card-list.component.scss'],
 })
 export class CardListComponent implements OnInit, OnDestroy {
-  posts?: Post[];
-  selectedPost: Post;
+  cards?: Card[];
+  selectedCard: Card;
 
   destroy$ = new Subject<boolean>();
 
   constructor(private cardService: CardService) {
-    this.selectedPost = {
+    this.selectedCard = {
       title: '',
       content: '',
       author: '',
       publishDate: '',
+      likes: 0,
     };
   }
 
@@ -27,22 +28,22 @@ export class CardListComponent implements OnInit, OnDestroy {
     this.getData();
   }
 
-  onPostSelect(post: Post): void {
-    this.selectedPost = post;
+  onCardSelect(card: Card): void {
+    this.selectedCard = card;
   }
 
-  onPostDelete(postId: number): void {
+  onCardDelete(cardId: number): void {
     this.cardService
-      .deletePosts(postId)
+      .deleteCards(cardId)
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => this.getData());
   }
 
   private getData(): void {
     this.cardService
-      .getPosts()
+      .getCards()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((response) => (this.posts = response));
+      .subscribe((response) => (this.cards = response));
   }
 
   ngOnDestroy(): void {

@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
 import { CardService } from 'src/app/cardsService';
-import { Post } from 'src/app/post.interface';
+import { Card } from 'src/app/card.interface';
 
 @Component({
   selector: 'app-post-reactive-form',
@@ -19,11 +19,11 @@ import { Post } from 'src/app/post.interface';
   styleUrls: ['./post-reactive-form.component.scss'],
 })
 export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
-  @Output() postSubmitted = new EventEmitter<Post>();
+  @Output() cardSubmitted = new EventEmitter<Card>();
 
   // @ts-ignore
   formGroup: FormGroup;
-  post: Post;
+  card: Card;
 
   destroy$ = new Subject<boolean>();
 
@@ -33,11 +33,12 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.post = {
+    this.card = {
       title: '',
       content: '',
       author: '',
       publishDate: '',
+      likes: 0,
     };
   }
 
@@ -46,7 +47,7 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((props) => {
         if (props['id']) {
-          this.getPost(props['id']);
+          this.getcard(props['id']);
         }
       });
 
@@ -55,34 +56,34 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnChanges(): void {
     if (this.formGroup) {
-      this.formGroup.get('id')?.setValue(this.post.id);
-      this.formGroup.get('title')?.setValue(this.post.title);
-      this.formGroup.get('content')?.setValue(this.post.content);
+      this.formGroup.get('id')?.setValue(this.card.id);
+      this.formGroup.get('title')?.setValue(this.card.title);
+      this.formGroup.get('content')?.setValue(this.card.content);
     }
   }
 
   onSubmit(): void {
-    const post: Post = {
+    const card: Card = {
       ...this.formGroup.value,
       author: 'Angular',
       publishDate: formatDate(new Date(), 'dd/MM/yyyy', 'en'),
     };
 
-    if (!post.id) {
+    if (!card.id) {
       this.cardService
-        .createPosts({ ...post })
+        .createCards({ ...card })
         .pipe(take(1))
-        .subscribe(() => this.router.navigate(['/Posts']));
+        .subscribe(() => this.router.navigate(['/cards']));
 
       return;
     } else {
       this.cardService
-        .updatePosts(post)
+        .updateCards(card)
         .pipe(takeUntil(this.destroy$))
-        .subscribe(() => this.router.navigate(['/Posts']));
+        .subscribe(() => this.router.navigate(['/cards']));
     }
 
-    this.postSubmitted.emit(post);
+    this.cardSubmitted.emit(card);
   }
 
   ngOnDestroy(): void {
@@ -90,21 +91,21 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
     this.destroy$.unsubscribe;
   }
 
-  private getPost(id: number): void {
+  private getcard(id: number): void {
     this.cardService
-      .getPost(id)
+      .getCard(id)
       .pipe(takeUntil(this.destroy$))
       .subscribe((response) => {
-        this.post = response;
+        this.card = response;
         this.buildForm();
       });
   }
 
   buildForm(): void {
     this.formGroup = this.formBuild.group({
-      id: this.post.id,
-      title: [this.post.title, [Validators.required, Validators.minLength(5)]],
-      content: [this.post.content],
+      id: this.card.id,
+      title: [this.card.title, [Validators.required, Validators.minLength(5)]],
+      content: [this.card.content],
     });
   }
 }

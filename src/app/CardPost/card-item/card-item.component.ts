@@ -7,7 +7,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { Post } from '../../post.interface';
+import { Card } from 'src/app/card.interface';
 
 @Component({
   selector: 'app-card-item',
@@ -15,19 +15,19 @@ import { Post } from '../../post.interface';
   styleUrls: ['./card-item.component.scss'],
 })
 export class CardItemComponent implements OnInit, OnChanges {
-  @Input() post!: Post;
+  @Input() card!: Card;
 
-  @Output() postSelected = new EventEmitter<Post>();
-  @Output() postEdit = new EventEmitter<Post>();
-  @Output() postDelete = new EventEmitter<number>();
+  @Output() cardSelected = new EventEmitter<Card>();
+  @Output() cardEdit = new EventEmitter<Card>();
+  @Output() cardDelete = new EventEmitter<number>();
   constructor() {}
 
-  likeCurrentPost(): void {
-    this.postSelected.emit(this.post);
+  likeCurrentCard(): void {
+    this.cardSelected.emit(this.card);
   }
 
-  editCurrentPost(): void {
-    this.postEdit.emit(this.post);
+  editCurrentCard(): void {
+    this.cardEdit.emit(this.card);
   }
 
   ngOnInit(): void {

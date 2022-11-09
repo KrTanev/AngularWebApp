@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from './post.interface';
+import { Card } from './card.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -11,28 +11,28 @@ export class CardService {
 
   constructor(private http: HttpClient) {}
 
-  getPost(id: number): Observable<Post> {
+  getCard(id: number): Observable<Card> {
     const url = `${this.url}/${id}`;
 
-    return this.http.get<Post>(url);
+    return this.http.get<Card>(url);
   }
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.url);
+  getCards(): Observable<Card[]> {
+    return this.http.get<Card[]>(this.url);
   }
 
-  createPosts(post: Post): Observable<any> {
-    return this.http.post(this.url, post);
+  createCards(card: Card): Observable<any> {
+    return this.http.post(this.url, card);
   }
 
-  updatePosts(post: Post): Observable<any> {
-    const url = `${this.url}/${post.id}`;
+  updateCards(card: Card): Observable<any> {
+    const url = `${this.url}/${card.id}`;
 
-    return this.http.put(url, post);
+    return this.http.put(url, card);
   }
 
-  deletePosts(postId: number): Observable<any> {
-    const url = `${this.url}/${postId}`;
+  deleteCards(cardId: number): Observable<any> {
+    const url = `${this.url}/${cardId}`;
 
     return this.http.delete(url);
   }
