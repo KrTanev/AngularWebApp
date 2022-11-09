@@ -111,11 +111,7 @@
       "author": "Generator",
       "publishDate": "01.01.1970",
       "likes": 25,
-      "likedBy": [
-        "Admin",
-        "proba",
-        "user"
-      ]
+      "likedBy": ["Admin", "proba", "user"]
     },
     {
       "id": 1,
@@ -124,11 +120,7 @@
       "author": "Angular",
       "publishDate": "08/11/2022",
       "likes": 10,
-      "likedBy": [
-        "Admin",
-        "proba",
-        "user"
-      ]
+      "likedBy": ["Admin", "proba", "user"]
     },
     {
       "id": 2,
@@ -137,11 +129,7 @@
       "author": "Generator",
       "publishDate": "01.01.1970",
       "likes": 4,
-      "likedBy": [
-        "Admin",
-        "proba",
-        "user"
-      ]
+      "likedBy": ["Admin", "proba", "user"]
     },
     {
       "id": 3,
@@ -150,10 +138,7 @@
       "author": "used since the 1500s",
       "publishDate": "01.01.1970",
       "likes": 2,
-      "likedBy": [
-        "Admin",
-        "user"
-      ]
+      "likedBy": ["Admin", "user"]
     },
     {
       "id": 4,
@@ -162,9 +147,7 @@
       "author": "Cicero in 45 BC",
       "publishDate": "01.01.1970",
       "likes": 1,
-      "likedBy": [
-        "Admin"
-      ]
+      "likedBy": ["Admin"]
     },
     {
       "id": 5,
@@ -173,11 +156,7 @@
       "author": "H. Rackham",
       "publishDate": "01.01.1970",
       "likes": 3,
-      "likedBy": [
-        "Admin",
-        "proba",
-        "user"
-      ]
+      "likedBy": ["Admin", "proba", "user"]
     },
     {
       "id": 6,
@@ -186,9 +165,7 @@
       "author": "Admin",
       "publishDate": "09/11/2022",
       "likes": 1,
-      "likedBy": [
-        "Admin"
-      ]
+      "likedBy": ["Admin"]
     }
   ]
 }

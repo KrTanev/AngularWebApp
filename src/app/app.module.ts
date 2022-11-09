@@ -8,17 +8,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { CardListViewComponent } from './CardPost/card-list-view/card-list-view.component';
-import { TableViewComponent } from './TableBooks/table-view/table-view.component';
-import { CardItemComponent } from './CardPost/card-item/card-item.component';
-import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
-import { TableListComponent } from './TableBooks/table-list/table-list.component';
-import { CardListComponent } from './CardPost/card-list/card-list.component';
-import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
+import { UserProfileComponent } from './Profile/user-profile/user-profile.component';
 import { Route, RouterModule } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { NonAuthGuard } from './auth/guards/non.auth.guard';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { CardItemComponent } from './CardPost/card-item/card-item.component';
+import { CardListComponent } from './CardPost/card-list/card-list.component';
+import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-reactive-form.component';
+import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
+import { TableListComponent } from './TableBooks/table-list/table-list.component';
+import { TableViewComponent } from './TableBooks/table-view/table-view.component';
 
 const routes: Route[] = [
   {
@@ -30,6 +31,11 @@ const routes: Route[] = [
     path: 'Login',
     component: LoginComponent,
     canActivate: [NonAuthGuard],
+  },
+  {
+    path: 'Profile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'Books',
@@ -77,6 +83,7 @@ const routes: Route[] = [
     CardListComponent,
     LoginComponent,
     RegisterComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
