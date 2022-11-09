@@ -17,39 +17,49 @@ import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-
 import { Route, RouterModule } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { AuthGuard } from './auth/guards/auth.guard';
+import { NonAuthGuard } from './auth/guards/non.auth.guard';
 
 const routes: Route[] = [
   {
     path: 'Register',
     component: RegisterComponent,
+    canActivate: [NonAuthGuard],
   },
   {
     path: 'Login',
     component: LoginComponent,
+    canActivate: [NonAuthGuard],
   },
   {
     path: 'Books',
     component: TableListComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'Books/add',
     component: PostTdFormComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'Books/edit/:id',
     component: PostTdFormComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'Posts',
     component: CardListComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'Posts/create',
     component: PostReactiveFormComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'Posts/edit/:id',
     component: PostReactiveFormComponent,
+    canActivate: [AuthGuard],
   },
 ];
 @NgModule({
