@@ -1,0 +1,8 @@
+<div>
+  <a routerLink="/Books/add">Add new</a>
+</div>
+
+<app-table-view
+  [posts]="posts"
+  (postDeleted)="onPostDelete($event)"
+></app-table-view>

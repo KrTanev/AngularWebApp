@@ -1,3 +1,7 @@
+<h3>
+  {{ post.id ? "Create" : "Update" }}
+</h3>
+
 <form #form="ngForm" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
@@ -75,6 +79,10 @@
     class="btn btn-primary"
     [attr.disabled]="!form.valid ? true : null"
   >
-    Submit
+    {{ post.id ? "Update" : "Add" }}
+  </button>
+
+  <button type="button" class="btn btn-outline-dark" (click)="onBack()">
+    {{ post.id ? "Back" : "Cancel" }}
   </button>
 </form>

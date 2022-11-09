@@ -1,1 +1,34 @@
-<div>Header</div>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/Posts">Liker</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ng-container *ngIf="hasLoggedIn">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="Posts">Posts</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="Books">Books</a>
+          </li>
+        </ng-container>
+      </ul>
+
+      <form class="d-flex">
+        <li class="nav-item" *ngIf="!hasLoggedIn; else loggedOut">
+          <a class="nav-link btn btn-outline-success" routerLink="Login"
+            >Login</a
+          >
+        </li>
+        <ng-template #loggedOut>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-success" (click)="onLogOut()"
+              >Logout</a
+            >
+          </li>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+</nav>

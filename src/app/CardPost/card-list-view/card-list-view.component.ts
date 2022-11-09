@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Post } from '../post.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Post } from '../../post.interface';
 
 @Component({
   selector: 'app-card-list-view',
@@ -8,11 +8,18 @@ import { Post } from '../post.interface';
 })
 export class CardListViewComponent {
   @Input() posts?: Post[];
+
+  @Output() postSelected = new EventEmitter<Post>();
+  @Output() postDeleted = new EventEmitter<number>();
   selectedPost!: Post;
 
   constructor() {}
 
   likeCurrentPost(post: Post): void {
     this.selectedPost = post;
+  }
+
+  onPostEdit(post: Post): void {
+    this.postSelected.emit({ ...post });
   }
 }
