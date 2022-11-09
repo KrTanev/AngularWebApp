@@ -41,6 +41,7 @@ export class PostReactiveFormComponent implements OnInit, OnChanges, OnDestroy {
       author: '',
       publishDate: '',
       likes: 0,
+      likedBy: [],
     };
   }
 

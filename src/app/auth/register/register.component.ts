@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
         email: formValues.email,
         password: '',
         confirmPassword: '',
+        isOrganization: formValues.isOrganization,
       });
       return;
     }
@@ -68,6 +69,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required]],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
+      isOrganization: ['', Validators.required],
     });
   }
 }

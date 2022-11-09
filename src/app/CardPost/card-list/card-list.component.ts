@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
+import { User } from 'src/app/auth/user.model';
 import { Card } from 'src/app/card.interface';
 import { CardService } from '../../cardsService';
 
@@ -10,6 +11,7 @@ import { CardService } from '../../cardsService';
 })
 export class CardListComponent implements OnInit, OnDestroy {
   cards?: Card[];
+  user: User;
   selectedCard: Card;
 
   destroy$ = new Subject<boolean>();
@@ -21,10 +23,12 @@ export class CardListComponent implements OnInit, OnDestroy {
       author: '',
       publishDate: '',
       likes: 0,
+      likedBy: [],
     };
   }
 
   ngOnInit(): void {
+    this.loggedUser();
     this.getData();
   }
 
@@ -49,5 +53,13 @@ export class CardListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
+  }
+
+  loggedUser(): void {
+    try {
+      this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
+    } catch {
+      console.log('err');
+    }
   }
 }

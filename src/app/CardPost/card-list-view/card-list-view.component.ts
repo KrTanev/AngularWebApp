@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from 'src/app/auth/user.model';
 import { Card } from 'src/app/card.interface';
 
 @Component({
@@ -8,6 +9,7 @@ import { Card } from 'src/app/card.interface';
 })
 export class CardListViewComponent {
   @Input() cards?: Card[];
+  @Input() user: User;
 
   @Output() cardSelected = new EventEmitter<Card>();
   @Output() cardDeleted = new EventEmitter<number>();

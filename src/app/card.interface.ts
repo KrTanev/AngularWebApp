@@ -5,4 +5,5 @@ export interface Card {
   author: string;
   publishDate: string;
   likes: number;
+  likedBy: string[];
 }

@@ -7,8 +7,11 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { User } from 'src/app/auth/user.model';
 import { Card } from 'src/app/card.interface';
+import { CardService } from 'src/app/cardsService';
 
 @Component({
   selector: 'app-card-item',
@@ -17,15 +20,39 @@ import { Card } from 'src/app/card.interface';
 })
 export class CardItemComponent implements OnInit, OnChanges {
   @Input() card!: Card;
-  @Input() user?: User;
+  @Input() user: User;
+
+  destroy$ = new Subject<boolean>();
+  errorMassage: string;
 
   @Output() cardSelected = new EventEmitter<Card>();
   @Output() cardEdit = new EventEmitter<Card>();
   @Output() cardDelete = new EventEmitter<number>();
-  constructor() {}
+  constructor(private cardService: CardService, private router: Router) {}
 
   likeCurrentCard(): void {
-    this.cardSelected.emit(this.card);
+    const likedBy = this.card.likedBy || [];
+    if (!likedBy.find((user) => user === this.user.username)) {
+      likedBy.push(this.user.username);
+
+      const card: Card = {
+        ...this.card,
+        likes: this.card.likes + 1,
+        likedBy: likedBy,
+      };
+
+      this.cardService
+        .updateCards(card)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => this.router.navigate(['/Posts']));
+
+      this.cardSelected.emit(this.card);
+
+      //
+      window.location.reload();
+      return;
+    }
+    this.errorMassage = 'You already liked this post!';
   }
 
   editCurrentCard(): void {
@@ -33,20 +60,10 @@ export class CardItemComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.loggedUser();
-
     // console.log('ngOnInit');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log('ngOnChanges');
-  }
-
-  loggedUser(): void {
-    try {
-      this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
-    } catch {
-      console.log('err');
-    }
   }
 }
