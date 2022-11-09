@@ -7,7 +7,11 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { Post } from '../../post.interface';
+import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
+import { User } from 'src/app/auth/user.model';
+import { Card } from 'src/app/card.interface';
+import { CardService } from 'src/app/cardsService';
 
 @Component({
   selector: 'app-card-item',
@@ -15,19 +19,44 @@ import { Post } from '../../post.interface';
   styleUrls: ['./card-item.component.scss'],
 })
 export class CardItemComponent implements OnInit, OnChanges {
-  @Input() post!: Post;
+  @Input() card!: Card;
+  @Input() user: User;
 
-  @Output() postSelected = new EventEmitter<Post>();
-  @Output() postEdit = new EventEmitter<Post>();
-  @Output() postDelete = new EventEmitter<number>();
-  constructor() {}
+  destroy$ = new Subject<boolean>();
+  errorMassage: string;
 
-  likeCurrentPost(): void {
-    this.postSelected.emit(this.post);
+  @Output() cardSelected = new EventEmitter<Card>();
+  @Output() cardEdit = new EventEmitter<Card>();
+  @Output() cardDelete = new EventEmitter<number>();
+  constructor(private cardService: CardService, private router: Router) {}
+
+  likeCurrentCard(): void {
+    const likedBy = this.card.likedBy || [];
+    if (!likedBy.find((user) => user === this.user.username)) {
+      likedBy.push(this.user.username);
+
+      const card: Card = {
+        ...this.card,
+        likes: this.card.likes + 1,
+        likedBy: likedBy,
+      };
+
+      this.cardService
+        .updateCards(card)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(() => this.router.navigate(['/Posts']));
+
+      this.cardSelected.emit(this.card);
+
+      //
+      window.location.reload();
+      return;
+    }
+    this.errorMassage = 'You already liked this post!';
   }
 
-  editCurrentPost(): void {
-    this.postEdit.emit(this.post);
+  editCurrentCard(): void {
+    this.cardEdit.emit(this.card);
   }
 
   ngOnInit(): void {

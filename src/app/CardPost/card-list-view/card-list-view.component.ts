@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Post } from '../../post.interface';
+import { User } from 'src/app/auth/user.model';
+import { Card } from 'src/app/card.interface';
 
 @Component({
   selector: 'app-card-list-view',
@@ -7,19 +8,20 @@ import { Post } from '../../post.interface';
   styleUrls: ['./card-list-view.component.scss'],
 })
 export class CardListViewComponent {
-  @Input() posts?: Post[];
+  @Input() cards?: Card[];
+  @Input() user: User;
 
-  @Output() postSelected = new EventEmitter<Post>();
-  @Output() postDeleted = new EventEmitter<number>();
-  selectedPost!: Post;
+  @Output() cardSelected = new EventEmitter<Card>();
+  @Output() cardDeleted = new EventEmitter<number>();
+  selectedCard!: Card;
 
   constructor() {}
 
-  likeCurrentPost(post: Post): void {
-    this.selectedPost = post;
+  likeCurrentCard(card: Card): void {
+    this.selectedCard = card;
   }
 
-  onPostEdit(post: Post): void {
-    this.postSelected.emit({ ...post });
+  onCardEdit(card: Card): void {
+    this.cardSelected.emit({ ...card });
   }
 }

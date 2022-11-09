@@ -1,5 +1,5 @@
 <h3>
-  {{ post.id ? "Edit post" : "Create post" }}
+  {{ card.id ? "Edit post" : "Create post" }}
 </h3>
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <div class="mb-3">
@@ -50,11 +50,11 @@
       class="btn btn-outline-dark"
       [disabled]="formGroup.invalid"
     >
-      {{ post.id ? "Edit" : "Create" }}
+      {{ card.id ? "Edit" : "Create" }}
     </button>
 
     <a class="btn btn-outline-default" routerLink="/Posts">
-      {{ post.id ? "Cancel" : "Back" }}
+      {{ card.id ? "Cancel" : "Back" }}
     </a>
   </div>
 </form>
