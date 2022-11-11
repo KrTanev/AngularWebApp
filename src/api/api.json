@@ -13,94 +13,75 @@
       "isOrganization": "true"
     },
     {
-      "username": "TheKuci",
-      "email": "krastio_bg@mail.bg",
-      "password": "fi.HJYeLUKg@8R",
-      "confirmPassword": "fi.HJYeLUKg@8R",
-      "id": "vZs8AZt",
+      "id": "cF-rmHY",
+      "username": "Proba",
+      "password": "1234",
+      "email": "proba@abv.bg",
       "isOrganization": "true"
     },
     {
-      "username": "proba",
-      "email": "prava@abv.bg",
+      "id": "U_5N8dB",
+      "username": "bob",
       "password": "123",
-      "confirmPassword": "123",
-      "isOrganization": "true",
-      "id": "SLjmdJ_"
+      "email": "bbb@abv.bb",
+      "isOrganization": "false"
     },
     {
-      "username": "sdadsadsa",
-      "email": "dsadsadsa",
-      "password": "123",
-      "confirmPassword": "123",
+      "username": "Ferrro",
+      "password": "1234",
+      "email": "ferro@abv.bg",
       "isOrganization": "false",
-      "id": "3oJPwgU"
-    },
-    {
-      "username": "user",
-      "email": "user@abv.bg",
-      "password": "123",
-      "confirmPassword": "123",
-      "isOrganization": "false",
-      "id": "TRs0Qzb"
+      "id": "9-0klME"
     }
   ],
   "posts": [
     {
-      "id": 0,
-      "title": "Title One",
-      "content": "Lorem",
-      "author": "Angular",
-      "publishDate": "01.01.1970"
+      "title": "Zero to One",
+      "addedBy": "Admin",
+      "author": "Peter Thiel",
+      "publishDate": "11/11/2022",
+      "content": "New book",
+      "id": 8
     },
     {
-      "id": 1,
-      "title": "Title two",
-      "content": "Lorem",
-      "author": "Angular",
-      "publishDate": "01.01.1970"
+      "title": "Rich dad poor dad",
+      "addedBy": "Admin",
+      "author": "T. Kiyosaki",
+      "publishDate": "11/11/2022",
+      "content": "New book",
+      "id": 9
     },
     {
-      "id": 2,
-      "title": "Title three",
-      "content": "Lorem",
-      "author": "Angular",
-      "publishDate": "01.01.1970"
+      "title": "Brief answers to the big questions",
+      "addedBy": "Admin",
+      "author": "Stepthen Hawking",
+      "publishDate": "11/11/2022",
+      "content": "New book",
+      "id": 10
     },
     {
-      "id": 3,
-      "title": "Title four",
-      "content": "Lorem",
-      "author": "Angular",
-      "publishDate": "01.01.1970"
+      "title": "American Gods",
+      "addedBy": "Admin",
+      "author": "Neil Gaiman",
+      "publishDate": "12/11/2022",
+      "content": "New book",
+      "id": 11
     },
     {
-      "title": "Title five",
-      "content": "None content provided",
-      "author": "Angular",
-      "publishDate": "06/11/2022",
-      "id": 4
+      "title": "Harry Potter and the order of the phoenix",
+      "addedBy": "Ferrro",
+      "author": "J.K. Rownling",
+      "publishDate": "12/11/2022",
+      "content": "New book",
+      "id": 12
     },
     {
-      "id": 5,
-      "title": "Title six",
-      "content": "Loremmmmmm",
-      "author": "Angular",
-      "publishDate": "06/11/2022"
-    },
-    {
-      "title": "p[ronasad",
-      "content": "sddsdsasds",
-      "author": "Angular",
-      "publishDate": "07/11/2022",
-      "id": 6
-    },
-    {
-      "title": "tryyyuiy",
-      "content": "dfdsfeeesfds",
-      "author": "Angular",
-      "publishDate": "07/11/2022",
-      "id": 7
+      "title": "Harry Potter and the Philosopher's Stone",
+      "addedBy": "Ferrro",
+      "author": "J.K. Rownling",
+      "publishDate": "12/11/2022",
+      "content": "New book",
+      "id": 13
     }
   ],
   "cards": [
@@ -110,11 +91,12 @@
       "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s",
       "author": "Generator",
       "publishDate": "01.01.1970",
-      "likes": 25,
+      "likes": 26,
       "likedBy": [
         "Admin",
         "proba",
-        "user"
+        "user",
+        "Proba"
       ]
     },
     {
@@ -123,11 +105,12 @@
       "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
       "author": "Angular",
       "publishDate": "08/11/2022",
-      "likes": 10,
+      "likes": 11,
       "likedBy": [
         "Admin",
         "proba",
-        "user"
+        "user",
+        "Ferrro"
       ]
     },
     {
@@ -149,10 +132,11 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
       "author": "used since the 1500s",
       "publishDate": "01.01.1970",
-      "likes": 2,
+      "likes": 3,
       "likedBy": [
         "Admin",
-        "user"
+        "user",
+        "Ferrro"
       ]
     },
     {
@@ -177,17 +161,6 @@
         "Admin",
         "proba",
         "user"
-      ]
-    },
-    {
-      "id": 6,
-      "title": "11111111111111111111111",
-      "content": "22222222222222222222222",
-      "author": "Admin",
-      "publishDate": "09/11/2022",
-      "likes": 1,
-      "likedBy": [
-        "Admin"
       ]
     }
   ]

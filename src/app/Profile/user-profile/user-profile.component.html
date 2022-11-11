@@ -1,0 +1,18 @@
+<div class="justify-content-center">
+  <div class="card">
+    <h5 class="card-header">Profile info</h5>
+    <div class="card-body">
+      <p class="card-text">Username: {{ user.username }}</p>
+      <p class="card-text">Email: {{ user.email }}</p>
+      <p class="card-text">
+        Is part of organization:
+        {{ user.isOrganization === "true" ? "Yes" : "No" }}
+      </p>
+      <a class="btn btn-primary" routerLink="/ChangeProfile"
+        >Change profile information</a
+      >
+    </div>
+  </div>
+</div>
+
+<app-table-profile-view [user]="user"></app-table-profile-view>

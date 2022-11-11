@@ -48,7 +48,6 @@ export class CardItemComponent implements OnInit, OnChanges {
 
       this.cardSelected.emit(this.card);
 
-      //
       window.location.reload();
       return;
     }

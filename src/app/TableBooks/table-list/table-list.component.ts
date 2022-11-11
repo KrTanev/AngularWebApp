@@ -17,7 +17,7 @@ export class TableListComponent implements OnInit, OnDestroy {
   constructor(private postsService: PostsService) {
     this.selectedPost = {
       title: '',
-      content: '',
+      addedBy: '',
       author: '',
       publishDate: '',
     };

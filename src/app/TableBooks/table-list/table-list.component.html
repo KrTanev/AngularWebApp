@@ -1,8 +1,10 @@
-<div>
-  <a routerLink="/Books/add">Add new</a>
-</div>
-
 <app-table-view
   [posts]="posts"
   (postDeleted)="onPostDelete($event)"
 ></app-table-view>
+
+<div>
+  <a class="btn btn-primary" routerLink="/Books/add"
+    >Add new book to the list of favorites</a
+  >
+</div>
