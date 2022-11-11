@@ -1,14 +1,15 @@
 <h1 class="text-center text-success mb-4">Read more about it</h1>
 
-<p *ngIf="selectedPost">Your liked article is: {{ selectedPost.title }}</p>
+<p *ngIf="selectedCard">Your liked article is: {{ selectedCard.title }}</p>
 
 <div class="row">
-  <div class="col-md-4" *ngFor="let post of posts">
+  <div class="col-md-4" *ngFor="let card of cards">
     <app-card-item
-      [post]="post"
-      (postSelected)="likeCurrentPost($event)"
-      (postEdit)="onPostEdit($event)"
-      (postDelete)="postDeleted.emit($event)"
+      [user]="user"
+      [card]="card"
+      (cardSelected)="likeCurrentCard($event)"
+      (cardEdit)="onCardEdit($event)"
+      (cardDelete)="cardDeleted.emit($event)"
     ></app-card-item>
   </div>
 </div>

@@ -29,6 +29,10 @@ export class AuthService {
   }
 
   register(data: User): Observable<User> {
+    data.isOrganization === 'yes'
+      ? (data.isOrganization = 'true')
+      : (data.isOrganization = 'false');
+
     return this.http.post<User>(this.url, data);
   }
 
