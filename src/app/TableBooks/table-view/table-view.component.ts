@@ -27,7 +27,6 @@ export class TableViewComponent implements OnInit {
   loggedUser(): void {
     try {
       this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
-      console.log(this.user);
     } catch {
       console.log('err');
     }

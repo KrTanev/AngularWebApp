@@ -49,7 +49,7 @@ export class PostTdFormComponent implements OnInit {
         .pipe(takeUntil(this.destroy$))
         .subscribe((props) => this.getPost(props['id']));
     } catch {
-      console.log('no id');
+      console.log('No id');
     }
   }
 
@@ -90,7 +90,6 @@ export class PostTdFormComponent implements OnInit {
   loggedUser(): void {
     try {
       this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
-      console.log(this.user);
     } catch {
       console.log('err');
     }
