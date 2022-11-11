@@ -20,6 +20,8 @@ import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-
 import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
 import { TableListComponent } from './TableBooks/table-list/table-list.component';
 import { TableViewComponent } from './TableBooks/table-view/table-view.component';
+import { TableProfileViewComponent } from './Profile/table-view/table-profile-view.component';
+import { ChangeProfileComponent } from './Profile/change-profile/change-profile.component';
 
 const routes: Route[] = [
   {
@@ -35,6 +37,11 @@ const routes: Route[] = [
   {
     path: 'Profile',
     component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'ChangeProfile',
+    component: ChangeProfileComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -84,6 +91,8 @@ const routes: Route[] = [
     LoginComponent,
     RegisterComponent,
     UserProfileComponent,
+    TableProfileViewComponent,
+    ChangeProfileComponent,
   ],
   imports: [
     BrowserModule,

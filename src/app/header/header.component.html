@@ -20,7 +20,7 @@
       </ul>
 
       <form class="d-flex">
-        <li class="nav-item" *ngIf="!hasLoggedIn; else loggedOut">
+        <li class="nav-item" *ngIf="hasLoggedIn; else loggedOut">
           <a class="nav-link btn btn-outline-success" (click)="onLogOut()"
             >Logout</a
           >

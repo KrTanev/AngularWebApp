@@ -18,6 +18,12 @@ export class AuthService {
     return this.http.get<User[]>(this.url);
   }
 
+  getUser(id: string): Observable<User> {
+    const url = `${this.url}/${id}`;
+
+    return this.http.get<User>(url);
+  }
+
   login(email: string, password: string): Observable<User | undefined> {
     return this.getUsers().pipe(
       map((stream: User[]) =>
@@ -34,6 +40,16 @@ export class AuthService {
       : (data.isOrganization = 'false');
 
     return this.http.post<User>(this.url, data);
+  }
+
+  updateProfile(data: User): Observable<User> {
+    const url = `${this.url}/${data.id}`;
+
+    data.isOrganization === 'yes'
+      ? (data.isOrganization = 'true')
+      : (data.isOrganization = 'false');
+
+    return this.http.put<User>(url, data);
   }
 
   setLoggedUser(user: User): void {

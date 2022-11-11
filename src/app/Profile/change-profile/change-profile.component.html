@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="text-primary text-center">Change profile</h3>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          placeholder="Enter username..."
+          formControlName="username"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label ng-model="oldPassword" for="oldPassword">Current password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="oldPassword"
+          placeholder="Enter current password so you can save the changes..."
+          formControlName="oldPassword"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="password">New password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter password if you want to change it..."
+          formControlName="password"
+        />
+      </div>
+
+      <div class="form-group mb-3" ng-show="oldPassword">
+        <label for="confirmPassword">Confirm new password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          placeholder="Confirm new password..."
+          formControlName="confirmPassword"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="isOrganization">Are you part of organization</label>
+        <input
+          type="text"
+          class="form-control"
+          id="isOrganization"
+          placeholder="Yes or No"
+          formControlName="isOrganization"
+        />
+      </div>
+
+      <div class="form-group mb-3">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="formGroup.invalid"
+        >
+          Submit
+        </button>
+        <a class="btn btn-light" routerLink="/Profile">Back</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p *ngIf="errorMassage" class="text-danger text-center">
+        {{ errorMassage }}
+      </p>
+    </div>
+  </div>
+</div>
