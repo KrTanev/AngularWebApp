@@ -1,4 +1,4 @@
-<h1 class="text-primary">Welcome</h1>
+<h1 class="text-primary">Favorite books of people</h1>
 
 <table class="table table-striped">
   <thead>
@@ -6,6 +6,7 @@
       <th scope="col">ID</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
+      <th scope="col">Added by</th>
       <th scope="col">Publish</th>
       <th scope="col">Actions</th>
     </tr>
@@ -16,12 +17,15 @@
       <td>{{ post.id }}</td>
       <td>{{ post.title }}</td>
       <td>{{ post.author }}</td>
+      <td>{{ post.addedBy }}</td>
       <td>{{ post.publishDate }}</td>
       <td>
         <a class="btn btn-link" [routerLink]="['/Books', 'edit', post.id]"
           >Edit</a
         >
+
         <button
+          *ngIf="user.isOrganization"
           type="button"
           class="btn btn-link"
           (click)="onDeleteClick(post.id)"

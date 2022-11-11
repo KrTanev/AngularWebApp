@@ -1,5 +1,5 @@
 <h3>
-  {{ post.id ? "Create" : "Update" }}
+  {{ !post.id ? "Add book" : "Update book" }}
 </h3>
 
 <form #form="ngForm" (ngSubmit)="onSubmit()">
@@ -40,25 +40,25 @@
     >
   </div>
   <div class="mb-3">
-    <label for="content" class="form-label">Content</label>
+    <label for="author" class="form-label">Author</label>
     <input
       type="text"
       class="form-control"
-      name="content"
-      id="content"
+      name="author"
+      id="author"
       placeholder="Enter content..."
-      [(ngModel)]="post.content"
-      #contentControl="ngModel"
-      minlength="10"
+      [(ngModel)]="post.author"
+      #authorControl="ngModel"
+      minlength="5"
       required
     />
   </div>
 
   <small
     *ngIf="
-      contentControl.touched &&
-      contentControl.invalid &&
-      contentControl.hasError('required')
+      authorControl.touched &&
+      authorControl.invalid &&
+      authorControl.hasError('required')
     "
     class="text-danger"
   >
@@ -66,12 +66,12 @@
   </small>
   <small
     *ngIf="
-      contentControl.touched &&
-      contentControl.invalid &&
-      contentControl.hasError('minlength')
+      authorControl.touched &&
+      authorControl.invalid &&
+      authorControl.hasError('minlength')
     "
     class="text-danger"
-    >You have to enter at least 10 simbols</small
+    >You have to enter at least 5 simbols</small
   >
 
   <button

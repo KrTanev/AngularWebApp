@@ -33,7 +33,5 @@ export class UserProfileComponent implements OnInit {
       console.log('err');
     }
   }
-
-  //TODO Change usernam/email/passowrd filed
   // table of liked cards
 }

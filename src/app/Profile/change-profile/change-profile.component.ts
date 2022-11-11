@@ -24,21 +24,11 @@ export class ChangeProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedUser();
-
-    // if (this.loggedUserData.id) {
-    //   this.authService
-    //     .getUser(this.loggedUserData.id)
-    //     .pipe(take(1))
-    //     .subscribe((response) => {
-    //       this.user = response;
-    //       console.log(response);
-    //     });
-    // }
-
     this.buildForm();
   }
 
   onSubmit(): void {
+    //Позволява се промяна на потребителското име ,паролата и/или статуса дали е организация.
     const formValues = this.formGroup.value;
     const currentPassword = this.user.password;
     let doSubmit = true;
@@ -58,7 +48,7 @@ export class ChangeProfileComponent implements OnInit {
       return;
     }
 
-    //В случей че ще прави нова парола трябва двете полета да съвпаднат
+    //В случай че ще прави нова парола, трябва двете полета да съвпаднат
     if (formValues.password !== formValues.confirmPassword) {
       this.errorMassage = 'Passwords do not match!';
 

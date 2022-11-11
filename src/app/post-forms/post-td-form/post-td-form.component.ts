@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
 import { Post } from 'src/app/post.interface';
 import { PostsService } from 'src/app/postService';
+import { User } from '../../auth/user.model';
 
 @Component({
   selector: 'app-post-td-form',
@@ -21,6 +22,7 @@ import { PostsService } from 'src/app/postService';
 export class PostTdFormComponent implements OnInit {
   @ViewChild('form', { static: true }) ngForm?: NgForm;
 
+  user: User;
   post: Post;
 
   @Output() postSubmitted = new EventEmitter<Post>();
@@ -34,16 +36,21 @@ export class PostTdFormComponent implements OnInit {
   ) {
     this.post = {
       title: '',
-      content: '',
+      addedBy: '',
       author: '',
       publishDate: '',
     };
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((props) => this.getPost(props['id']));
+    this.loggedUser();
+    try {
+      this.activatedRoute.params
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((props) => this.getPost(props['id']));
+    } catch {
+      console.log('no id');
+    }
   }
 
   onSubmit(): void {
@@ -62,7 +69,8 @@ export class PostTdFormComponent implements OnInit {
 
       const newPost = {
         ...this.post,
-        author: 'Angular',
+        addedBy: this.user.username,
+        content: 'New book',
         publishDate: formatDate(new Date(), 'dd/MM/yyyy', 'en'),
       };
 
@@ -77,6 +85,15 @@ export class PostTdFormComponent implements OnInit {
 
   onBack(): void {
     this.router.navigate(['/Books']);
+  }
+
+  loggedUser(): void {
+    try {
+      this.user = JSON.parse(localStorage.getItem('loggedUser') || '');
+      console.log(this.user);
+    } catch {
+      console.log('err');
+    }
   }
 
   private getPost(id: number): void {

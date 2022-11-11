@@ -45,7 +45,7 @@ export class AuthService {
   updateProfile(data: User): Observable<User> {
     const url = `${this.url}/${data.id}`;
 
-    data.isOrganization === 'yes'
+    data.isOrganization === 'Yes' || data.isOrganization === 'yes'
       ? (data.isOrganization = 'true')
       : (data.isOrganization = 'false');
 
