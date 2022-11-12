@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from 'src/app/auth/user.model';
-import { Card } from 'src/app/card.interface';
+import { User } from 'src/utils/interfaces/user.model';
+import { Card } from 'src/utils/interfaces/card.interface';
 
 @Component({
   selector: 'app-card-list-view',

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { Post } from '../../post.interface';
+import { Post } from '../../../utils/interfaces/post.interface';
 import { PostsService } from '../../postService';
 
 @Component({
@@ -17,6 +17,7 @@ export class TableListComponent implements OnInit, OnDestroy {
   constructor(private postsService: PostsService) {
     this.selectedPost = {
       title: '',
+      idOfUserAdded: '',
       addedBy: '',
       author: '',
       publishDate: '',

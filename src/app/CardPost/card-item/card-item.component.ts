@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { User } from 'src/app/auth/user.model';
-import { Card } from 'src/app/card.interface';
+import { User } from 'src/utils/interfaces/user.model';
+import { Card } from 'src/utils/interfaces/card.interface';
 import { CardService } from 'src/app/cardsService';
 
 @Component({
@@ -32,8 +32,8 @@ export class CardItemComponent implements OnInit, OnChanges {
 
   likeCurrentCard(): void {
     const likedBy = this.card.likedBy || [];
-    if (!likedBy.find((user) => user === this.user.username)) {
-      likedBy.push(this.user.username);
+    if (!likedBy.find((userId) => userId === this.user.id)) {
+      likedBy.push(this.user.id || '0');
 
       const card: Card = {
         ...this.card,
@@ -58,11 +58,7 @@ export class CardItemComponent implements OnInit, OnChanges {
     this.cardEdit.emit(this.card);
   }
 
-  ngOnInit(): void {
-    // console.log('ngOnInit');
-  }
+  ngOnInit(): void {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log('ngOnChanges');
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
 }

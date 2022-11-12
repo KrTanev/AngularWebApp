@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Card } from './card.interface';
+import { BASE_URL } from '../utils/constants/url';
+import { Card } from '../utils/interfaces/card.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CardService {
-  url = 'http://localhost:3000/cards';
+  url = `${BASE_URL}cards`;
 
   constructor(private http: HttpClient) {}
 

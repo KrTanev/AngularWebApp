@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
-import { User } from '../../auth/user.model';
-import { Post } from '../../post.interface';
+import { User } from '../../../utils/interfaces/user.model';
+import { Post } from '../../../utils/interfaces/post.interface';
 
 @Component({
   selector: 'app-table-view',

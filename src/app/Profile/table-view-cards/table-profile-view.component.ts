@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject, take } from 'rxjs';
-import { User } from '../../auth/user.model';
-import { Card } from '../../card.interface';
+import { User } from '../../../utils/interfaces/user.model';
+import { Card } from '../../../utils/interfaces/card.interface';
 import { CardService } from '../../cardsService';
 
 @Component({
@@ -24,7 +24,7 @@ export class TableProfileViewComponent implements OnInit {
   getCardForCurrentUser(cards: Card[]): void {
     const likedCards = [];
     for (let i = 0; i < cards.length; i++) {
-      if (cards[i].likedBy.find((user) => user === this.user.username)) {
+      if (cards[i].likedBy.find((userId) => userId === this.user.id)) {
         likedCards.push(cards[i]);
       }
     }
@@ -48,8 +48,9 @@ export class TableProfileViewComponent implements OnInit {
     for (let i = 0; i < cards.length; i++) {
       if (cards[i].id === cardId) {
         likedCards = cards[i].likedBy.filter(
-          (user) => user !== this.user.username
+          (userId) => userId !== this.user.id
         );
+
         const card = {
           id: cards[i].id,
           title: cards[i].title,

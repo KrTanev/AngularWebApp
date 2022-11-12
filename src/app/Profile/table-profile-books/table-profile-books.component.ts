@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { take } from 'rxjs';
-import { User } from '../../auth/user.model';
-import { Post } from '../../post.interface';
+import { User } from '../../../utils/interfaces/user.model';
+import { Post } from '../../../utils/interfaces/post.interface';
 import { PostsService } from '../../postService';
 
 @Component({
@@ -32,7 +32,7 @@ export class TableProfileBooksComponent implements OnInit {
   getUserPosts(posts: Post[]): void {
     const myPosts: Post[] = [];
     posts.forEach((post) => {
-      post.addedBy === this.user.username && myPosts.push(post);
+      post.idOfUserAdded === this.user.id && myPosts.push(post);
     });
     this.myPosts = myPosts;
   }

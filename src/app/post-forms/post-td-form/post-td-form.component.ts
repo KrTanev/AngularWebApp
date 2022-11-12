@@ -10,9 +10,9 @@ import {
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
-import { Post } from 'src/app/post.interface';
+import { Post } from 'src/utils/interfaces/post.interface';
 import { PostsService } from 'src/app/postService';
-import { User } from '../../auth/user.model';
+import { User } from '../../../utils/interfaces/user.model';
 
 @Component({
   selector: 'app-post-td-form',
@@ -36,6 +36,7 @@ export class PostTdFormComponent implements OnInit {
   ) {
     this.post = {
       title: '',
+      idOfUserAdded: '',
       addedBy: '',
       author: '',
       publishDate: '',
@@ -69,6 +70,7 @@ export class PostTdFormComponent implements OnInit {
 
       const newPost = {
         ...this.post,
+        idOfUserAdded: this.user.id || '0',
         addedBy: this.user.username,
         content: 'New book',
         publishDate: formatDate(new Date(), 'dd/MM/yyyy', 'en'),

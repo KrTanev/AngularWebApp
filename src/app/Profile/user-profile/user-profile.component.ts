@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { AuthService } from '../../auth/auth.service';
-import { User } from '../../auth/user.model';
+import { User } from '../../../utils/interfaces/user.model';
 
 @Component({
   selector: 'app-user-profile',

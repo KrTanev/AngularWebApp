@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { User } from 'src/app/auth/user.model';
-import { Card } from 'src/app/card.interface';
+import { User } from 'src/utils/interfaces/user.model';
+import { Card } from 'src/utils/interfaces/card.interface';
 import { AuthService } from '../../auth/auth.service';
 import { CardService } from '../../cardsService';
 
