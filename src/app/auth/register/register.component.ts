@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map, take } from 'rxjs';
 import { AuthService } from '../auth.service';
-import { User } from '../user.model';
+import { User } from '../../../utils/interfaces/user.model';
 
 @Component({
   selector: 'app-register',
@@ -55,8 +55,15 @@ export class RegisterComponent implements OnInit {
         }
       });
 
+    const user = {
+      username: formValues.username,
+      password: formValues.password,
+      email: formValues.email,
+      isOrganization: formValues.isOrganization,
+    };
+
     this.authService
-      .register(formValues)
+      .register(user)
       .pipe(take(1))
       .subscribe(() => {
         this.router.navigate(['Login']);

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { User } from 'src/app/auth/user.model';
-import { Card } from 'src/app/card.interface';
+import { User } from 'src/utils/interfaces/user.model';
+import { Card } from 'src/utils/interfaces/card.interface';
+import { AuthService } from '../../auth/auth.service';
 import { CardService } from '../../cardsService';
 
 @Component({
@@ -16,7 +17,10 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   destroy$ = new Subject<boolean>();
 
-  constructor(private cardService: CardService) {
+  constructor(
+    private cardService: CardService,
+    private authService: AuthService
+  ) {
     this.selectedCard = {
       title: '',
       content: '',
@@ -29,6 +33,8 @@ export class CardListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loggedUser();
+    this.authService.setHasLoggedIn(!!this.loggedUser);
+
     this.getData();
   }
 

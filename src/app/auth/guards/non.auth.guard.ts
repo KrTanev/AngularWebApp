@@ -6,20 +6,17 @@ import { AuthService } from '../auth.service';
   providedIn: 'root',
 })
 export class NonAuthGuard implements CanActivate {
-  constructor(private authSerivece: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
-    try {
-      const user = this.authSerivece.getLoggedUser() || null;
+    const user = this.authService.getLoggedUser();
 
-      if (user) {
-        this.router.navigate(['Posts']);
+    if (user) {
+      this.router.navigate(['Posts']);
 
-        return false;
-      }
-    } catch {
-      return true;
+      return false;
     }
+
     return true;
   }
 }

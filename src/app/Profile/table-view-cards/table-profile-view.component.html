@@ -1,0 +1,33 @@
+<h1 class="text-primary">Posts you like</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Content</th>
+      <th scope="col">Publish</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let card of likedCards">
+      <td>{{ card.id }}</td>
+      <td>{{ card.title }}</td>
+      <td>{{ card.author }}</td>
+      <td>{{ card.content }}</td>
+      <td>{{ card.publishDate }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-link"
+          (click)="onDislikeClick(card.id)"
+        >
+          Dislike
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

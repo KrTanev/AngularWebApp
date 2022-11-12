@@ -11,8 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
 import { CardService } from 'src/app/cardsService';
-import { Card } from 'src/app/card.interface';
-import { User } from 'src/app/auth/user.model';
+import { Card } from 'src/utils/interfaces/card.interface';
+import { User } from 'src/utils/interfaces/user.model';
 
 @Component({
   selector: 'app-post-reactive-form',

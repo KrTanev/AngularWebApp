@@ -12,20 +12,20 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="Books">Books</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="Profile">Profile</a>
+          </li>
         </ng-container>
       </ul>
 
       <form class="d-flex">
-        <li class="nav-item" *ngIf="!hasLoggedIn; else loggedOut">
-          <a class="nav-link btn btn-outline-success" (click)="onLogOut()"
-            >Logout</a
-          >
+        <li class="nav-item" *ngIf="hasLoggedIn; else loggedOut">
+          <a class="btn btn-danger" (click)="onLogOut()">Logout</a>
         </li>
         <ng-template #loggedOut>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-success" routerLink="Login"
-              >Login</a
-            >
+            <a class="btn btn-warning" routerLink="Login">Login</a>
           </li>
         </ng-template>
       </form>
