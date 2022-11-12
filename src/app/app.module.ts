@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-// import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { CardListViewComponent } from './CardPost/card-list-view/card-list-view.component';
@@ -20,8 +19,9 @@ import { PostReactiveFormComponent } from './post-forms/post-reactive-form/post-
 import { PostTdFormComponent } from './post-forms/post-td-form/post-td-form.component';
 import { TableListComponent } from './TableBooks/table-list/table-list.component';
 import { TableViewComponent } from './TableBooks/table-view/table-view.component';
-import { TableProfileViewComponent } from './Profile/table-view/table-profile-view.component';
+import { TableProfileViewComponent } from './Profile/table-view-cards/table-profile-view.component';
 import { ChangeProfileComponent } from './Profile/change-profile/change-profile.component';
+import { TableProfileBooksComponent } from './Profile/table-profile-books/table-profile-books.component';
 
 const routes: Route[] = [
   {
@@ -80,7 +80,6 @@ const routes: Route[] = [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    // FooterComponent,
     TableViewComponent,
     CardListViewComponent,
     CardItemComponent,
@@ -93,6 +92,7 @@ const routes: Route[] = [
     UserProfileComponent,
     TableProfileViewComponent,
     ChangeProfileComponent,
+    TableProfileBooksComponent,
   ],
   imports: [
     BrowserModule,
