@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { User } from 'src/app/auth/user.model';
-import { Card } from 'src/app/card.interface';
+import { User } from 'src/utils/interfaces/user.model';
+import { Card } from 'src/utils/interfaces/card.interface';
 import { CardService } from 'src/app/cardsService';
 
 @Component({

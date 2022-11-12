@@ -10,9 +10,9 @@ import {
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
-import { Post } from 'src/app/post.interface';
+import { Post } from 'src/utils/interfaces/post.interface';
 import { PostsService } from 'src/app/postService';
-import { User } from '../../auth/user.model';
+import { User } from '../../../utils/interfaces/user.model';
 
 @Component({
   selector: 'app-post-td-form',

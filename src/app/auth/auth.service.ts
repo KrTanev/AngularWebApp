@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from './user.model';
+import { User } from '../../utils/interfaces/user.model';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
+import { BASE_URL } from '../../utils/constants/url';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  url = 'http://localhost:3000/users';
+  url = `${BASE_URL}users`;
 
   private hasLoggedIn$ = new BehaviorSubject<boolean>(false);
 
@@ -58,8 +59,13 @@ export class AuthService {
     this.setHasLoggedIn(true);
   }
 
-  getLoggedUser(): User {
-    return JSON.parse(localStorage.getItem('loggedUser') || '');
+  getLoggedUser(): boolean {
+    try {
+      JSON.parse(localStorage.getItem('loggedUser') || '');
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   logOut(): void {

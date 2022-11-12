@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject, take } from 'rxjs';
-import { User } from '../../auth/user.model';
-import { Card } from '../../card.interface';
+import { User } from '../../../utils/interfaces/user.model';
+import { Card } from '../../../utils/interfaces/card.interface';
 import { CardService } from '../../cardsService';
 
 @Component({

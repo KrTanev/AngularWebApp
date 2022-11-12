@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { Post } from '../../post.interface';
+import { Post } from '../../../utils/interfaces/post.interface';
 import { PostsService } from '../../postService';
 
 @Component({
