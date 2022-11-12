@@ -8,7 +8,7 @@
       <th scope="col">Author</th>
       <th scope="col">Added by</th>
       <th scope="col">Publish</th>
-      <th scope="col">Actions</th>
+      <th scope="col" *ngIf="!user.isOrganization">Actions</th>
     </tr>
   </thead>
 
@@ -19,20 +19,21 @@
       <td>{{ post.author }}</td>
       <td>{{ post.addedBy }}</td>
       <td>{{ post.publishDate }}</td>
-      <td>
-        <a class="btn btn-link" [routerLink]="['/Books', 'edit', post.id]"
-          >Edit</a
-        >
-
-        <button
-          *ngIf="user.isOrganization"
-          type="button"
-          class="btn btn-link"
-          (click)="onDeleteClick(post.id)"
-        >
-          Delete
-        </button>
-      </td>
+      <ng-container *ngIf="!user.isOrganization">
+        <td>
+          <a class="btn btn-link" [routerLink]="['/Books', 'edit', post.id]"
+            >Edit</a
+          >
+          <button
+            *ngIf="user.isOrganization"
+            type="button"
+            class="btn btn-link"
+            (click)="onDeleteClick(post.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </ng-container>
     </tr>
   </tbody>
 </table>

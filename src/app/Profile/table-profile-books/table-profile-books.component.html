@@ -1,1 +1,37 @@
-<p>table-profile-books works!</p>
+<br />
+<h1 class="text-primary">Books you added</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Added by</th>
+      <th scope="col">Publish date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let post of myPosts">
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.author }}</td>
+      <td>{{ post.addedBy }}</td>
+      <td>{{ post.publishDate }}</td>
+      <td>
+        <a class="btn btn-link" [routerLink]="['/Books', 'edit', post.id]"
+          >Edit</a
+        >
+        <button
+          type="button"
+          class="btn btn-link"
+          (click)="onDeleteClick(post.id)"
+        >
+          Delete book
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -32,6 +32,13 @@
       "email": "ferro@abv.bg",
       "isOrganization": "false",
       "id": "9-0klME"
+    },
+    {
+      "username": "No Permission",
+      "password": "1234",
+      "email": "permission@abv.bg",
+      "isOrganization": "false",
+      "id": "hfc7v5i"
     }
   ],
   "posts": [
@@ -119,12 +126,13 @@
       "content": "Lorem is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here,",
       "author": "Generator",
       "publishDate": "01.01.1970",
-      "likes": 5,
+      "likes": 6,
       "likedBy": [
         "Admin",
         "proba",
         "user",
-        "Ferrro"
+        "Ferrro",
+        "No Permission"
       ]
     },
     {
@@ -146,9 +154,10 @@
       "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
       "author": "Cicero in 45 BC",
       "publishDate": "01.01.1970",
-      "likes": 1,
+      "likes": 2,
       "likedBy": [
-        "Admin"
+        "Admin",
+        "No Permission"
       ]
     },
     {
