@@ -36,6 +36,7 @@ export class PostTdFormComponent implements OnInit {
   ) {
     this.post = {
       title: '',
+      idOfUserAdded: '',
       addedBy: '',
       author: '',
       publishDate: '',
@@ -69,6 +70,7 @@ export class PostTdFormComponent implements OnInit {
 
       const newPost = {
         ...this.post,
+        idOfUserAdded: this.user.id || '0',
         addedBy: this.user.username,
         content: 'New book',
         publishDate: formatDate(new Date(), 'dd/MM/yyyy', 'en'),

@@ -32,7 +32,7 @@ export class TableProfileBooksComponent implements OnInit {
   getUserPosts(posts: Post[]): void {
     const myPosts: Post[] = [];
     posts.forEach((post) => {
-      post.addedBy === this.user.username && myPosts.push(post);
+      post.idOfUserAdded === this.user.id && myPosts.push(post);
     });
     this.myPosts = myPosts;
   }

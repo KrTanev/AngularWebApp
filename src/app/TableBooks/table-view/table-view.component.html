@@ -19,7 +19,7 @@
       <td>{{ post.author }}</td>
       <td>{{ post.addedBy }}</td>
       <td>{{ post.publishDate }}</td>
-      <ng-container *ngIf="!user.isOrganization">
+      <ng-container *ngIf="user.isOrganization === 'true'">
         <td>
           <a class="btn btn-link" [routerLink]="['/Books', 'edit', post.id]"
             >Edit</a
